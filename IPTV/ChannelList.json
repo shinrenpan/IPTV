@@ -1,0 +1,210 @@
+[
+    {
+      "title" : "民視新聞台HD",
+      "url" : "http://210.200.79.26:1935/live/ftvn_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "民視HD",
+      "url" : "http://210.200.79.26:1935/live/ftvw_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "民視戲劇",
+      "url" : "http://210.200.79.26:1935/live/drama_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "民視旅遊",
+      "url" : "http://210.200.79.26:1935/live/ftvtravel_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "非凡新聞HD",
+      "url" : "http://210.200.79.26:1935/live/ustvn_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "非凡商業",
+      "url" : "http://210.200.79.26:1935/live/ustvc_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "民視交通電視台",
+      "url" : "http://210.200.79.26:1935/live/ftvm_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "東森新聞ASIA",
+      "url" : "http://210.200.79.26:1935/live/acti_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "大愛電視台",
+      "url" : "http://210.200.79.26:1935/live/Di_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "東森亞洲台",
+      "url" : "http://210.200.79.26:1935/live/acti_2_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "八大第一台",
+      "url" : "http://210.200.79.26:1935/live/gtv_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "中天娛樂",
+      "url" : "http://210.200.79.26:1935/live/cti1_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "中天新聞",
+      "url" : "http://210.200.79.26:1935/live/ctinews/chunklist.m3u8"
+    },
+    {
+      "title" : "人間衛視",
+      "url" : "http://210.200.79.26:1935/live/live_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "台視HD",
+      "url" : "http://210.200.79.26:1935/live/ttv.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "台視財經",
+      "url" : "http://210.200.79.26:1935/live/ttv_fin.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "TVBS創富新聞",
+      "url" : "http://210.200.79.26:1935/live/tvbs_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "TVBS新聞台HD",
+      "url" : "http://210.200.79.26:1935/live/tvbsnhd/chunklist.m3u8"
+    },
+    {
+      "title" : "華視HD",
+      "url" : "http://210.200.79.26:1935/live/cts.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "華視綜合娛樂",
+      "url" : "http://210.200.79.26:1935/live/ctshd/chunklist.m3u8"
+    },
+    {
+      "title" : "中視",
+      "url" : "http://210.200.79.26:1935/live/ctv.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "中視新聞台",
+      "url" : "http://210.200.79.26:1935/live/ctv_news.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "中視綜藝台",
+      "url" : "http://210.200.79.26:1935/live/ctv_all.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "中視HD",
+      "url" : "http://210.200.79.26:1935/live/ctvhd/chunklist.m3u8"
+    },
+    {
+      "title" : "華視新聞資訊",
+      "url" : "http://210.200.79.26:1935/live/cts_news.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "Discovery 科學頻道",
+      "url" : "http://210.200.79.26:1935/live/dscvrsciencehd/chunklist.m3u8"
+    },
+    {
+      "title" : "三立台灣台 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net:1935/sat/tv292"
+    },
+    {
+      "title" : "Discovery DMAX",
+      "url" : "http://210.200.79.26:1935/live/Dturbo_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "空中英文教室",
+      "url" : "http://210.200.79.26:1935/live/english_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "豬哥亮歌廳秀",
+      "url" : "http://210.200.79.26:1935/live/pig_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "BBC World News",
+      "url" : "http://210.200.79.26:1935/live/bbc_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "EVE",
+      "url" : "http://210.200.79.26:1935/live/Dhome_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "CNN News",
+      "url" : "http://210.200.79.26:1935/live/cnnnews_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "CNN 國際",
+      "url" : "http://210.200.79.26:1935/live/cnnint_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "卡通頻道",
+      "url" : "http://210.200.79.26:1935/live/cncartoon_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "哈電影",
+      "url" : "http://210.200.79.26:1935/live/hotmovie_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "民視綜藝",
+      "url" : "http://210.200.79.26:1935/live/program_sp.sdp/chunklist.m3u8"
+    },
+    {
+      "title" : "NFL Network",
+      "url" : "http://nflsvglagame1-i.akamaihd.net/hls/live/223206/NFL_Mobile/2015Mobile_NFLN_2000k.m3u8"
+    },
+    {
+      "title" : "NFL Now",
+      "url" : "http://nflioslivesvg2-i.akamaihd.net/hls/live/221521/nflioslive/2015HackerNow_w99d9_g.m3u8"
+    },
+    {
+      "title" : "鳳凰中文台",
+      "url" : "http://zv.3gv.ifeng.com/zhongwen800k.m3u8"
+    },
+    {
+      "title" : "鳳凰資訊台",
+      "url" : "http://zv.3gv.ifeng.com/zixun800k.m3u8"
+    },
+    {
+      "title" : "東森幼幼台",
+      "url" : "http://ktv051.cdnak.ds.kylintv.net/nlds/kylin/etyoyo/as/live/etyoyo_4.m3u8"
+    },
+    {
+      "title" : "東森新聞",
+      "url" : "http://210.200.79.26:1935/live/swente/chunklist.m3u8"
+    },
+    {
+      "title" : "壹電視HD",
+      "url" : "http://wowza4.nexttv.com.tw/liveedge/eratv3/chunklist.m3u8"
+    },
+    {
+      "title" : "緯來體育台 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net/sat/tv722"
+    },
+    {
+      "title" : "緯來娛樂台 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net/sat/tv702"
+    },
+    {
+      "title" : "星衛娛樂台",
+      "url" : "http://wshdl.load.cdn.zhanqi.tv/zqlive/1285_Zloy4.flv"
+    },
+    {
+      "title" : "緯來綜合台 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net/sat/tv262"
+    },
+    {
+      "title" : "FOX 體育台 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net/sat/tv732"
+    },
+    {
+      "title" : "FOX 體育2台 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net/sat/tv742"
+    },
+    {
+      "title" : "博斯運動 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net:1935/sat/us172"
+    },
+    {
+      "title" : "東森財經新聞 (rtmp)",
+      "url" : "rtmp://kv3.ts33.net/sat/tv572"
+    }
+]
