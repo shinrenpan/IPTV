@@ -3,7 +3,7 @@
 // Copyright (c) 2015年 Shinren Pan <shinren.pan@gmail.com>
 
 #import <UIKit/UIKit.h>
-#import <IJKMediaPlayer/IJKMediaPlayer.h>
+#import <IJKMediaFramework/IJKMediaFramework.h>
 
 /// 利用 IJKMediaPlayer 客製化的播放器.
 @interface TVPlayerViewController : UIViewController
