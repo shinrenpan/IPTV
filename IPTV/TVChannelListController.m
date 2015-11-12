@@ -93,7 +93,7 @@
 #pragma mark - Private
 - (void)__setup
 {
-    NSString *path   = [[NSBundle mainBundle]pathForResource:@"ChannelList" ofType:@"json"];
+    NSString *path   = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ChannelList.json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:path];
     id json          = [NSJSONSerialization JSONObjectWithData:jsonData
                                                        options:NSJSONReadingAllowFragments
