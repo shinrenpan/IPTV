@@ -1,3 +1,6 @@
+[![LICENSE](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+[![Donate](https://img.shields.io/badge/PayPal-Donate-yellow.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LC58N7VZUST5N)
+
 # IPTV
 簡單提供網路電視 (基本上都是台灣地區電視) 在 iPhone or iPad 上觀看.  
 懶得使用後台, [頻道列表][2] 放在 client 端.
@@ -36,14 +39,9 @@
 頻道無法播放, 或是你有其他直播源請至 ISSUE 發佈.
 
 
-## LICENSE
-[MIT LICENSE][6]
-
-
 
 [1]: https://github.com/Bilibili/ijkplayer "ijkplayer"
 [2]: IPTV/ChannelList.json "頻道列表"
 [3]: https://developer.apple.com/xcode/download/ "xcode"
 [4]: https://github.com/shinrenpan/IPTV/archive/master.zip "下載"
 [5]: http://www.dycksir.com/2015/10/10/Launching-Your-App-on-Devices-Xcode-7-without-certificate/ "教學"
-[6]: LICENSE "LICENSE"
