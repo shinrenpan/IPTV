@@ -91,7 +91,6 @@
     playerView.frame   = self.view.bounds;
     
     self.tvoutWindow.hidden             = YES;
-    self.tvoutWindow.screen             = nil;
     self.tvoutWindow.rootViewController = nil;
 
     [self.view insertSubview:playerView atIndex:1];
