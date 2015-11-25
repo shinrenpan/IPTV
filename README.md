@@ -9,6 +9,7 @@
 ## 需求
 實機 only, 不支援模擬器, 因為 IJKMediaFramework.framework 我只有編譯實機下的 framework.
 
+請手動下載並匯入 [IJKMediaFramework.framework][6] (arm64, armv7 版本)
 
 ## ijkplayer
 為什麼使用 [ijkplayer][1] 而不是使用原生的 Library?
@@ -45,3 +46,4 @@
 [3]: https://developer.apple.com/xcode/download/ "xcode"
 [4]: https://github.com/shinrenpan/IPTV/archive/master.zip "下載"
 [5]: http://www.dycksir.com/2015/10/10/Launching-Your-App-on-Devices-Xcode-7-without-certificate/ "教學"
+[6]: https://www.dropbox.com/s/5ltr66tyk3lxvfy/IJKMediaFramework.framework.zip?dl=0 "下載"
