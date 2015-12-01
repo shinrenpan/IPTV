@@ -1,6 +1,7 @@
 // TVChannelListController.m
 //
-// Copyright (c) 2015年 Shinren Pan <shinren.pan@gmail.com>
+// Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/12/01.
+// Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
 #import "TVPlayerViewController.h"
 #import "TVChannelListController.h"
@@ -28,9 +29,12 @@
     TVPlayerViewController *mvc = segue.destinationViewController;
     UITableViewCell *cell       = sender;
     NSIndexPath *indexPath      = [self.tableView indexPathForCell:cell];
-    NSDictionary *channel       = _searching ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
-    mvc.urlString               = channel[@"url"];
-    mvc.title                   = channel[@"title"];
+    
+    NSDictionary *channel =
+    _searching ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
+    
+    mvc.urlString = channel[@"url"];
+    mvc.title     = channel[@"title"];
 }
 
 #pragma mark - UITableViewDataSource
@@ -44,10 +48,14 @@
     return _dataSource.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    NSDictionary *channel = _searching ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
+    
+    NSDictionary *channel =
+    _searching ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
+    
     cell.textLabel.text   = channel[@"title"];
     
     return cell;
@@ -93,13 +101,19 @@
 #pragma mark - Private
 - (void)__setup
 {
-    NSString *path   = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ChannelList.json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:path];
-    id json          = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                       options:NSJSONReadingAllowFragments
-                                                         error:nil];
+    NSString *path =
+    [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ChannelList.json"];
     
-    if(![json isKindOfClass:[NSArray class]]) { return;}
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    
+    id json = [NSJSONSerialization JSONObjectWithData:jsonData
+                                              options:NSJSONReadingAllowFragments
+                                                error:nil];
+    
+    if(![json isKindOfClass:[NSArray class]])
+    {
+        return;
+    }
     
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
     _dataSource            = [[json sortedArrayUsingDescriptors:@[sort]]copy];

@@ -1,6 +1,7 @@
-//  TVPlayerViewController+Notification.m
+// TVPlayerViewController+Notification.m
 //
-// Copyright (c) 2015年 Shinren Pan <shinren.pan@gmail.com>
+// Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/12/01.
+// Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
 #import "TVOutViewController.h"
 #import "TVPlayerViewController+Notification.h"
@@ -8,66 +9,65 @@
 
 @implementation TVPlayerViewController (Notification)
 
+#pragma mark - Public
 - (void)notification_setup
 {
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     
-    [center addObserver:self selector:@selector(_IJKMediaPlaybackIsPreparedToPlayDidChangeNotification:)
-                   name:IJKMediaPlaybackIsPreparedToPlayDidChangeNotification object:nil];
+    [center addObserver:self
+               selector:@selector(__IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification:)
+                   name:IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification object:nil];
     
-    [center addObserver:self selector:@selector(_IJKMoviePlayerLoadStateDidChangeNotification:)
-                   name:IJKMoviePlayerLoadStateDidChangeNotification object:nil];
+    [center addObserver:self
+               selector:@selector(__IJKMPMoviePlayerLoadStateDidChangeNotification:)
+                   name:IJKMPMoviePlayerLoadStateDidChangeNotification object:nil];
     
-    [center addObserver:self selector:@selector(_IJKMoviePlayerPlaybackDidFinishNotification:)
-                   name:IJKMoviePlayerPlaybackDidFinishNotification object:nil];
+    [center addObserver:self
+               selector:@selector(__IJKMPMoviePlayerPlaybackDidFinishNotification:)
+                   name:IJKMPMoviePlayerPlaybackDidFinishNotification object:nil];
     
     // 連接設備
-    [center addObserver:self selector:@selector(_screenDidConnectNotification:)
+    [center addObserver:self
+               selector:@selector(__screenDidConnectNotification:)
                    name:UIScreenDidConnectNotification object:nil];
     
     // 移除連接
-    [center addObserver:self selector:@selector(_screenDidDisconnectNotification:)
+    [center addObserver:self
+               selector:@selector(__screenDidDisconnectNotification:)
                    name:UIScreenDidDisconnectNotification object:nil];
 }
 
 - (void)notification_remove
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
 }
 
 #pragma mark - Private
-- (void)_IJKMediaPlaybackIsPreparedToPlayDidChangeNotification:(NSNotification *)sender
+- (void)__IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification:(NSNotification *)sender
 {
     [self.player play];
 }
 
-- (void)_IJKMoviePlayerLoadStateDidChangeNotification:(NSNotification *)sender
+- (void)__IJKMPMoviePlayerLoadStateDidChangeNotification:(NSNotification *)sender
 {
-    MPMovieLoadState state = [self.player loadState];
-    
-    // Buffering ???
-    if(state == MPMovieLoadStateStalled)
-    {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    }
-    else
-    {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    }
+    [self setupRightItem];
 }
 
-- (void)_IJKMoviePlayerPlaybackDidFinishNotification:(NSNotification *)sender
+- (void)__IJKMPMoviePlayerPlaybackDidFinishNotification:(NSNotification *)sender
 {
     NSInteger reason =
-    [[sender.userInfo valueForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey]integerValue];
+    [[sender.userInfo valueForKey:IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey]integerValue];
     
-    if(reason != MPMovieFinishReasonPlaybackEnded)
+    if(reason != IJKMPMovieFinishReasonPlaybackEnded)
     {
         [self showAlertWithMessage:@"無法播放此頻道."];
     }
 }
 
-- (void)_screenDidConnectNotification:(NSNotification *)sender
+- (void)__screenDidConnectNotification:(NSNotification *)sender
 {
     UIScreen *screen = sender.object;
     screen.overscanCompensation  = UIScreenOverscanCompensationInsetApplicationFrame;
@@ -85,7 +85,7 @@
     [mvc.view addSubview:playerView];
 }
 
-- (void)_screenDidDisconnectNotification:(NSNotification *)sender
+- (void)__screenDidDisconnectNotification:(NSNotification *)sender
 {
     UIView *playerView = [self.player view];
     playerView.frame   = self.view.bounds;

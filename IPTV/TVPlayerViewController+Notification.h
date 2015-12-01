@@ -1,10 +1,15 @@
-//  TVPlayerViewController+Notification.h
+// TVPlayerViewController+Notification.h
 //
-// Copyright (c) 2015年 Shinren Pan <shinren.pan@gmail.com>
+// Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/12/01.
+// Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
 #import "TVPlayerViewController.h"
 
-/// TVPlayerViewController Notification handle category.
+/**
+ *  TVPlayerViewController Cateogry.
+ *
+ *  處理 TVPlayerViewController Notification handle 的 Categoty.
+ */
 @interface TVPlayerViewController (Notification)
 
 
@@ -12,10 +17,14 @@
 /// @name Category methods.
 ///-----------------------------------------------------------------------------
 
-/// Setup Notification.
+/**
+ *  設置 Notification.
+ */
 - (void)notification_setup;
 
-/// Remove Notification.
+/**
+ *  移除 Notification.
+ */
 - (void)notification_remove;
 
 @end

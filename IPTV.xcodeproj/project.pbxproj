@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		13CD5D79E3854EAD9405E7D4BA584229 /* TVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0041447188BD68AE36CC8E8FF38023 /* TVPlayerViewController.m */; };
-		1CF65B553CEF77A26972530D2679A1E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C710225ABFC237D49F74B1B0A4555B30 /* libz.dylib */; };
 		25FB0C1D76294560F0914189438B6374 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AF454FD11A1E3AEA82245E8119591C /* AVFoundation.framework */; };
 		278B5F84680CE9D5720997F5692E9805 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64E695732EEE4C26D607D9A3BBB2ECA /* VideoToolbox.framework */; };
-		3856D94D17B99B7FF771852A801042A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C764A4FECB3486D985310E25FDBEAED2 /* LaunchScreen.xib */; };
+		3D89A7991F2D2305E2C9A08B1C6BB208 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF0DA56A8E8EBFCA6B5B2998E4ACE7 /* LaunchScreen.storyboard */; };
 		45811B7E5B9F2EF5B56351B4EC76D952 /* TVOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749217AB31EA21E3BF4AD2C4C72A12B1 /* TVOutViewController.m */; };
 		4D231CA20E2A0A8F2AE65F345ACE1329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8735B8D7FC9AFA80E639826DCF18CFE /* AppDelegate.m */; };
 		532E064EEABC5E0490203BEB85722C78 /* TVChannelListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60643A8600BD56A61563D864626CDADA /* TVChannelListController.m */; };
@@ -30,10 +29,10 @@
 		05897DE5BE677C9C713F9E55CBF7366B /* ChannelList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChannelList.json; sourceTree = "<group>"; };
 		1C7C2F83A3D60CB04725ADDB841166F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24053244F0F275FF19D7B6263B4C0363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFF0DA56A8E8EBFCA6B5B2998E4ACE7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D7719AD103567C4EA240BC3A5CCF600 /* TVPlayerViewController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TVPlayerViewController+Notification.m"; sourceTree = "<group>"; };
-		4B40AF585C8FAE9ED10AB51DA750AF0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4C74177F419D4A5C7257C8FE85691821 /* TVChannelListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVChannelListController.h; sourceTree = "<group>"; };
-		59DEDBD54D80EA144C261FCC1823B7E7 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		59DEDBD54D80EA144C261FCC1823B7E7 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IJKMediaFramework.framework; path = IPTV/IJKMediaFramework.framework; sourceTree = "<group>"; };
 		60643A8600BD56A61563D864626CDADA /* TVChannelListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVChannelListController.m; sourceTree = "<group>"; };
 		60E8A13DD3E25E3A7899C77A61565D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66578B4A1ACF79A8D2D6D093C01D0851 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -45,7 +44,6 @@
 		A64E695732EEE4C26D607D9A3BBB2ECA /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		AC0041447188BD68AE36CC8E8FF38023 /* TVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVPlayerViewController.m; sourceTree = "<group>"; };
 		B8735B8D7FC9AFA80E639826DCF18CFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C710225ABFC237D49F74B1B0A4555B30 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D10C247627573F795D54347B38EF0CB1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D369AA1400C04E278DB6384CE7FFB3B8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D3DF84E6CB66D6CF6DD2804CEA811197 /* TVOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVOutViewController.h; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				9ECD564C5AE7E5D7EB80ABBC6DDB7FDA /* CoreMedia.framework in Frameworks */,
 				5BB52E4863FE2638D3DA1C3C3D18B2AE /* IJKMediaFramework.framework in Frameworks */,
 				278B5F84680CE9D5720997F5692E9805 /* VideoToolbox.framework in Frameworks */,
-				1CF65B553CEF77A26972530D2679A1E6 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +97,6 @@
 				59DEDBD54D80EA144C261FCC1823B7E7 /* IJKMediaFramework.framework */,
 				D10C247627573F795D54347B38EF0CB1 /* MediaPlayer.framework */,
 				A64E695732EEE4C26D607D9A3BBB2ECA /* VideoToolbox.framework */,
-				C710225ABFC237D49F74B1B0A4555B30 /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,7 +106,7 @@
 			children = (
 				1C7C2F83A3D60CB04725ADDB841166F0 /* AppDelegate.h */,
 				B8735B8D7FC9AFA80E639826DCF18CFE /* AppDelegate.m */,
-				C764A4FECB3486D985310E25FDBEAED2 /* LaunchScreen.xib */,
+				2FFF0DA56A8E8EBFCA6B5B2998E4ACE7 /* LaunchScreen.storyboard */,
 				A2DBF604C52DF0B453A77830BD124DE7 /* Main.storyboard */,
 				4C74177F419D4A5C7257C8FE85691821 /* TVChannelListController.h */,
 				60643A8600BD56A61563D864626CDADA /* TVChannelListController.m */,
@@ -191,7 +187,7 @@
 			files = (
 				6E8711540C4D5B4C1DDEA4A1173DE8A9 /* ChannelList.json in Resources */,
 				79E910CEBA867B7058064350D0574138 /* Images.xcassets in Resources */,
-				3856D94D17B99B7FF771852A801042A1 /* LaunchScreen.xib in Resources */,
+				3D89A7991F2D2305E2C9A08B1C6BB208 /* LaunchScreen.storyboard in Resources */,
 				9F410DCD619AAA48E7A44D75D0D5F57D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,14 +217,6 @@
 				60E8A13DD3E25E3A7899C77A61565D71 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C764A4FECB3486D985310E25FDBEAED2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B40AF585C8FAE9ED10AB51DA750AF0D /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -282,11 +270,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/IPTV";
 				INFOPLIST_FILE = IPTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -306,11 +292,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/IPTV";
 				INFOPLIST_FILE = IPTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
