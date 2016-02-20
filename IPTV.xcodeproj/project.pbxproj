@@ -202,16 +202,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A2DBF604C52DF0B453A77830BD124DE7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60E8A13DD3E25E3A7899C77A61565D71 /* Base */,
-				ADFEB3AB7AF2D227295ABD71F3DCF5FE /* en */,
-				782E5426118A5106CF8A193A3B4053E3 /* zh-Hant */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0F2FD9A199155EA24DCA1C4C59B4225C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -220,6 +210,16 @@
 				B4BAFC65FA5AB4BD8378468D260F2177 /* zh-Hant */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A2DBF604C52DF0B453A77830BD124DE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E8A13DD3E25E3A7899C77A61565D71 /* Base */,
+				ADFEB3AB7AF2D227295ABD71F3DCF5FE /* en */,
+				782E5426118A5106CF8A193A3B4053E3 /* zh-Hant */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
