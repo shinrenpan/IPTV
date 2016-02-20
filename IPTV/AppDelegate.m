@@ -5,6 +5,8 @@
 
 #import "AppDelegate.h"
 
+NSString * const kIPTVDataBasePath = @"Documents/ChannelList.plist";
+
 
 @implementation AppDelegate
 
@@ -25,14 +27,14 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSString *copyPath =
-    [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ChannelList.json"];
+    [NSHomeDirectory() stringByAppendingPathComponent:kIPTVDataBasePath];
     
     if([fileManager fileExistsAtPath:copyPath])
     {
         return;
     }
     
-    NSString *defaultPath = [[NSBundle mainBundle]pathForResource:@"ChannelList" ofType:@"json"];
+    NSString *defaultPath = [[NSBundle mainBundle]pathForResource:@"ChannelList" ofType:@"plist"];
     
     [fileManager copyItemAtPath:defaultPath toPath:copyPath error:nil];
 }

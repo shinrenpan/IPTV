@@ -1,50 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NBs-ix-mDg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NBs-ix-mDg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--TVChannelListController-->
         <scene sceneID="EyE-gS-UWv">
             <objects>
                 <tableViewController restorationIdentifier="TVChannelListController" storyboardIdentifier="TVChannelListController" id="urY-PK-DIc" userLabel="TVChannelListController" customClass="TVChannelListController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="WO3-ua-83I">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="WO3-ua-83I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜尋" id="RMH-2J-P9z">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="iEE-CY-Q2g">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <animations/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <outlet property="delegate" destination="urY-PK-DIc" id="so0-dc-GyY"/>
+                                <outlet property="delegate" destination="urY-PK-DIc" id="Bqa-nw-k7w"/>
                             </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="fWy-Di-kGd" style="IBUITableViewCellStyleDefault" id="JE6-bT-DgH">
-                                <rect key="frame" x="0.0" y="130" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="130" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JE6-bT-DgH" id="8RA-5X-Vsu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fWy-Di-kGd">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="59"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="69"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
-                                    <segue destination="Ifd-g2-DmN" kind="show" id="EyZ-26-0pR"/>
+                                    <segue destination="Ifd-g2-DmN" kind="show" id="L8N-Tf-BvY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,8 +48,13 @@
                             <outlet property="delegate" destination="urY-PK-DIc" id="cY5-rm-keB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="頻道列表" id="oqb-fv-F6I">
+                    <navigationItem key="navigationItem" id="oqb-fv-F6I">
                         <barButtonItem key="backBarButtonItem" title=" " id="SMP-hD-Wof"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BhU-Ub-k0H">
+                            <connections>
+                                <action selector="addItemClicked:" destination="urY-PK-DIc" id="Sm2-Me-Td7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYC-ty-jMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,9 +72,22 @@
                     <view key="view" contentMode="scaleToFill" id="sXb-4g-Suo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV Connected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7H-qR-cEq">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F7H-qR-cEq" secondAttribute="trailing" id="3Ms-qK-S4b"/>
+                            <constraint firstItem="F7H-qR-cEq" firstAttribute="top" secondItem="n6L-4L-nce" secondAttribute="bottom" id="3vZ-tF-BQe"/>
+                            <constraint firstItem="F7H-qR-cEq" firstAttribute="leading" secondItem="sXb-4g-Suo" secondAttribute="leading" id="66L-VF-pLC"/>
+                            <constraint firstItem="G5I-JW-YNC" firstAttribute="top" secondItem="F7H-qR-cEq" secondAttribute="bottom" id="NJd-33-gxH"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3HD-WM-guV" appends="YES" id="0bC-cG-k1O"/>
                             <outletCollection property="gestureRecognizers" destination="QuS-o4-w84" appends="YES" id="hTk-Yn-crl"/>
@@ -84,6 +97,7 @@
                     <connections>
                         <outlet property="tapOnce" destination="3HD-WM-guV" id="sDV-fA-Vr6"/>
                         <outlet property="tapTwice" destination="QuS-o4-w84" id="QxU-jP-Lgl"/>
+                        <outlet property="tvConnectedLabel" destination="F7H-qR-cEq" id="NTf-fj-iPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4q-nZ-uFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +121,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d6s-Sf-IgQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="urY-PK-DIc" kind="relationship" relationship="rootViewController" id="0Lk-iQ-m8A"/>

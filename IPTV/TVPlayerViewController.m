@@ -4,15 +4,12 @@
 // Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
 #import "TVPlayerViewController.h"
-#import "TVPlayerViewController+Notification.h"
 
-@interface TVPlayerViewController ()
+@interface TVPlayerViewController ()<SRPPlayerViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITapGestureRecognizer *tapOnce;
 @property (nonatomic, weak) IBOutlet UITapGestureRecognizer *tapTwice;
-
-@property (nonatomic, strong) UIWindow *tvoutWindow;
-@property (nonatomic, strong) id <IJKMediaPlayback> player;
+@property (nonatomic, weak) IBOutlet UILabel *tvConnectedLabel;
 
 @end
 
@@ -20,28 +17,14 @@
 @implementation TVPlayerViewController
 
 #pragma mark - LifeCycle
-- (void)dealloc
-{
-    [self.player stop];
-    [_player shutdown];
-    [self notification_remove];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self __setup];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self setupRightItem];
+    [_tapOnce requireGestureRecognizerToFail:_tapTwice];
     
-    if(![_player isPlaying])
-    {
-        [_player prepareToPlay];
-    }
+    self.navigationItem.rightBarButtonItem = [self __loadingItem];
+    self.delegate = self;
+    _tvConnectedLabel.hidden = !self.isTVConnected;
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -52,92 +35,71 @@
 #pragma mark - IBAction
 - (IBAction)tapGestureRecognizerTapOnce:(UITapGestureRecognizer *)sender
 {
-    self.navigationController.navigationBarHidden =
-    !self.navigationController.navigationBarHidden;
+    self.navigationController.navigationBarHidden = !self.navigationController.navigationBarHidden;
     
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (IBAction)tapGestureRecognizerTapTwice:(UITapGestureRecognizer *)sender
 {
-    [self changePlayerScaleMode];
+    self.scalingMode++;
 }
 
-#pragma mark - Public
-- (void)showAlertWithMessage:(NSString *)message
+#pragma mark - SRPPlayerViewControllerDelegate
+- (void)playerControllerTVConnected
 {
-    UIAlertController *alert =
-    [UIAlertController alertControllerWithTitle:@"錯誤"
-                                        message:message
-                                 preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *OK =
-    [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-    
-    [alert addAction:OK];
-    [self presentViewController:alert animated:YES completion:nil];
+    _tvConnectedLabel.hidden = NO;
 }
 
-- (void)changePlayerScaleMode
+- (void)playerControllerTVDisconnected
 {
-    NSInteger scalingMode = [_player scalingMode];
-    
-    scalingMode++;
-    
-    if(scalingMode > IJKMPMovieScalingModeAspectFill)
+    _tvConnectedLabel.hidden = YES;
+}
+
+- (void)playerController:(SRPPlayerViewController *)playerController finishReason:(IJKMPMovieFinishReason)reason
+{
+    if(reason == IJKMPMovieFinishReasonPlaybackError)
     {
-        scalingMode = IJKMPMovieScalingModeNone;
-    }
-    
-    [_player setScalingMode:scalingMode];
-}
-
-- (void)setupRightItem
-{
-    UIBarButtonItem *item;
-    
-    IJKMPMovieLoadState state = [self.player loadState];
-    
-    if(state == IJKMPMovieLoadStatePlayable || state == IJKMPMovieLoadStateUnknown)
-    {
-        UIActivityIndicatorView *loading =
-        [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        NSString *title   = NSLocalizedString(@"Error!", @"錯誤!");
+        NSString *message = NSLocalizedString(@"Channel is not available.", @"無法播放頻道.");
         
-        loading.color = [UIColor blueColor];
-        item = [[UIBarButtonItem alloc]initWithCustomView:loading];
+        UIAlertController *alert =
+        [UIAlertController alertControllerWithTitle:title
+                                            message:message
+                                     preferredStyle:UIAlertControllerStyleAlert];
         
-        [loading startAnimating];
+        title = NSLocalizedString(@"OK", @"確定");
+        
+        void (^callback)() = ^(){
+            [self.navigationController popViewControllerAnimated:YES];
+        };
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:title
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:callback];
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    else
-    {
-        item = [[UIBarButtonItem alloc]initWithTitle:@"縮放"
-                                               style:UIBarButtonItemStyleDone
-                                              target:self
-                                              action:@selector(changePlayerScaleMode)];
-    }
-    
-    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)playerController:(SRPPlayerViewController *)playerController playbackStateChanged:(IJKMPMoviePlaybackState)state
+{
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 #pragma mark - Private
-- (void)__setup
+- (UIBarButtonItem *)__loadingItem
 {
-    [_tapOnce requireGestureRecognizerToFail:_tapTwice];
+    UIActivityIndicatorView *loadingView =
+    [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-    _tvoutWindow = [[UIWindow alloc]init];
-    NSURL *URL   = [NSURL URLWithString:_urlString];
-    _player      = [[IJKFFMoviePlayerController alloc]initWithContentURL:URL withOptions:nil];
+    loadingView.color = [UIColor blueColor];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:loadingView];
     
-    UIView *playerView          = [_player view];
-    playerView.frame            = self.view.bounds;
-    playerView.backgroundColor  = [UIColor blackColor];
+    [loadingView startAnimating];
     
-    playerView.autoresizingMask =
-    UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    [self.view insertSubview:playerView atIndex:1];
-    [_player setScalingMode:IJKMPMovieScalingModeAspectFit];
-    [self notification_setup];
+    return item;
 }
 
 @end

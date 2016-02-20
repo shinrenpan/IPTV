@@ -5,8 +5,21 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const kIPTVDataBasePath;
+
+/**
+ *  App 進入點
+ */
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+
+///-----------------------------------------------------------------------------
+/// @name  Properties
+///-----------------------------------------------------------------------------
+
+/**
+ *  主視窗
+ */
 @property (strong, nonatomic) UIWindow *window;
 
 @end

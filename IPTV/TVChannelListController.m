@@ -3,12 +3,14 @@
 // Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/12/01.
 // Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
+#import "AppDelegate.h"
 #import "TVPlayerViewController.h"
 #import "TVChannelListController.h"
 
+
 @interface TVChannelListController ()<UISearchBarDelegate>
 
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSArray *searchResults;
 @property (nonatomic, assign) BOOL searching;
 
@@ -31,9 +33,9 @@
     NSIndexPath *indexPath      = [self.tableView indexPathForCell:cell];
     
     NSDictionary *channel =
-    _searching ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
+    (_searching) ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
     
-    mvc.urlString = channel[@"url"];
+    mvc.mediaURL  = [NSURL URLWithString:channel[@"url"]];
     mvc.title     = channel[@"title"];
 }
 
@@ -56,9 +58,25 @@
     NSDictionary *channel =
     _searching ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
     
-    cell.textLabel.text   = channel[@"title"];
+    cell.textLabel.text = channel[@"title"];
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [_dataSource removeObjectAtIndex:indexPath.row];
+        [self __updateDataBase];
+    }
 }
 
 #pragma mark - UISearchBarDelegate
@@ -98,26 +116,85 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - IBAction
+- (IBAction)addItemClicked:(id)sender
+{
+    NSString *title   = NSLocalizedString(@"Input channel infomation", @"輸入頻道資訊");
+    NSString *message = NSLocalizedString(@"Title and URL are required", @"名稱及網址為必填");
+    
+    UIAlertController *alert =
+    [UIAlertController alertControllerWithTitle:title
+                                        message:message
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = NSLocalizedString(@"Required: Channel title", @"必填: 頻道名稱");
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = NSLocalizedString(@"Required: Channel url", @"必填: 頻道網址");
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
+    
+    title = NSLocalizedString(@"Cancel", @"取消");
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:title
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+    
+    void (^saveHandle)() = ^{
+        NSString *newChannelTitle = alert.textFields.firstObject.text;
+        NSString *newChannelURL   = alert.textFields.lastObject.text;
+        
+        if(!newChannelTitle.length || !newChannelURL.length)
+        {
+            return ;
+        }
+        
+        NSDictionary *newChannel = @{@"title" : alert.textFields.firstObject.text,
+                                     @"url"   : alert.textFields.lastObject.text};
+        
+        [_dataSource addObject:newChannel];
+        [self __updateDataBase];
+    };
+    
+    title = NSLocalizedString(@"Save", @"儲存");
+    UIAlertAction *save = [UIAlertAction actionWithTitle:title
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:saveHandle];
+    
+    [alert addAction:cancel];
+    [alert addAction:save];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Private
 - (void)__setup
 {
+    self.title = ^{
+        NSString *key = @"CFBundleShortVersionString";
+        NSString *version = [[NSBundle mainBundle]infoDictionary][key];
+        return [NSString stringWithFormat:@"Version: %@", version];
+    }();
+    
     NSString *path =
-    [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/ChannelList.json"];
+    [NSHomeDirectory() stringByAppendingPathComponent:kIPTVDataBasePath];
     
-    NSData *jsonData = [NSData dataWithContentsOfFile:path];
-    
-    id json = [NSJSONSerialization JSONObjectWithData:jsonData
-                                              options:NSJSONReadingAllowFragments
-                                                error:nil];
-    
-    if(![json isKindOfClass:[NSArray class]])
-    {
-        return;
-    }
-    
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    _dataSource            = [[json sortedArrayUsingDescriptors:@[sort]]copy];
+    _dataSource = ^{
+        NSArray *temp = [NSArray arrayWithContentsOfFile:path];
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+        return [[temp sortedArrayUsingDescriptors:@[sort]]mutableCopy];
+    }();
 }
 
+- (void)__updateDataBase
+{
+    [self.tableView reloadData];
+    
+    NSString *path =
+    [NSHomeDirectory() stringByAppendingPathComponent:kIPTVDataBasePath];
+    
+    [_dataSource writeToFile:path atomically:YES];
+}
 
 @end

@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  IPTV
+
+  Created by Shinren Pan on 2016/2/19.
+  Copyright © 2016年 Shinren Pan. All rights reserved.
+*/
+
+// 載入中...
+"Loading..." = "Loading...";
+
+// 錯誤!
+"Error!" = "Error!";
+
+// 無法播放頻道.
+"Channel is not available." = "Channel is not available.";
+
+// 確定
+"OK" = "OK";
+
+// 輸入頻道資訊
+"Input channel infomation" = "Input channel infomation";
+
+// 名稱及網址為必填
+"Title and URL are required" = "Title and URL are required";
+
+// 必填: 頻道名稱
+"Required: Channel title" = "Required: Channel title";
+
+// 必填: 頻道網址
+"Required: Channel url" = "Required: Channel url";
+
+// 取消
+"Cancel" = "Cancel";
+
+// 儲存
+"Sava" = "Save";

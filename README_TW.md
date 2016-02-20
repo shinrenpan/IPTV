@@ -2,31 +2,31 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-yellow.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LC58N7VZUST5N)
 
 
-An iOS universal video player app.  
-I use it to watch IPTV.
+iOS universal 影片播放器.  
+我用它來觀看 IPTV.
 
 
 ![](README/1.png)
 
 
-## Required
+## 需求
 - [SRPPlayerViewController][2]
 - [ijkplayer][3]
 
 
-## Build
-Download both [SRPPlayerViewController.framework][4] and [IJKMediaFramework.framework][5],
-drag them into project.
+## 編譯
+下載 [SRPPlayerViewController.framework][4] 和 [IJKMediaFramework.framework][5],
+並拖入 project.
 
 Build and run...
 
 
-## TV Channel
-This app doesn't provide any IPTV content, you should import it manually.
+## TV 頻道
+這個 App 不提供任何 IPTV 資訊, 你必須手動輸入.
 
-Click add button to add new IPTV content or use iTunes File Sharing to edit it.
+按下新增按鈕新增一個 IPTV 資訊, 或是使用 iTunes File Sharing 編輯內容.
 
-The IPTV content saved in [ChannelList.plist][1].
+IPTV 資訊儲存在 [ChannelList.plist][1].
 
 ![](README/2.png)
 
