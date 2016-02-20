@@ -5,6 +5,7 @@
 An iOS universal video player app.  
 I use it to watch IPTV.
 
+[中文說明][0]
 
 ![](README/1.png)
 
@@ -35,6 +36,7 @@ The IPTV content saved in [ChannelList.plist][1].
 
 
 
+[0]: README_TW.md
 [1]: IPTV/ChannelList.plist "ChannelList.plist"
 [2]: https://github.com/shinrenpan/SRPPlayerViewController "SRPPlayerViewController"
 [3]: https://github.com/Bilibili/ijkplayer "ijkplayer"
