@@ -29,8 +29,6 @@ Click add button to add new IPTV content or use iTunes File Sharing to edit it.
 
 The IPTV content saved in [ChannelList.plist][1].
 
-![](README/2.png)
-
 
 
 

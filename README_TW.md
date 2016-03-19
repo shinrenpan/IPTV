@@ -28,8 +28,6 @@ Build and run...
 
 IPTV 資訊儲存在 [ChannelList.plist][1].
 
-![](README/2.png)
-
 
 
 
