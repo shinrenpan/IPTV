@@ -6,7 +6,7 @@
 		<key>title</key>
 		<string>Test Channel</string>
 		<key>url</key>
-		<string>http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch1/appleman.m3u8</string>
+		<string>http://devstreaming.apple.com/videos/wwdc/2016/510ndmh9wkcvzneegv2/510/hls_vod_mvp.m3u8</string>
 	</dict>
 </array>
 </plist>

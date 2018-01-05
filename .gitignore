@@ -1,5 +1,6 @@
 ### ignore framework
 *.framework
+*.a
 
 ### OSX ###
 .DS_Store

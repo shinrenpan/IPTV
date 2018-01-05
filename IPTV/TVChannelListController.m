@@ -1,7 +1,6 @@
-// TVChannelListController.m
 //
-// Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/12/01.
-// Copyright (c) 2015年 Shinren Pan. All rights reserved.
+//  Copyright (c) 2018年 shinren.pan@gmail.com All rights reserved.
+//
 
 #import "AppDelegate.h"
 #import "TVPlayerViewController.h"
@@ -32,11 +31,9 @@
     UITableViewCell *cell       = sender;
     NSIndexPath *indexPath      = [self.tableView indexPathForCell:cell];
     
-    NSDictionary *channel =
-    (_searching) ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
-    
-    mvc.mediaURL  = [NSURL URLWithString:channel[@"url"]];
-    mvc.title     = channel[@"title"];
+    NSDictionary *channel = (_searching) ? _searchResults[indexPath.row] : _dataSource[indexPath.row];
+    mvc.mediaURL = [NSURL URLWithString:channel[@"url"]];
+    mvc.title = channel[@"title"];
 }
 
 #pragma mark - UITableViewDataSource
@@ -142,7 +139,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     
-    void (^saveHandle)() = ^{
+    void (^saveHandle)(UIAlertAction *) = ^(UIAlertAction *action){
         NSString *newChannelTitle = alert.textFields.firstObject.text;
         NSString *newChannelURL   = alert.textFields.lastObject.text;
         

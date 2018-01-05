@@ -1,7 +1,6 @@
-// TVPlayerViewController.m
 //
-// Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/12/01.
-// Copyright (c) 2015年 Shinren Pan. All rights reserved.
+//  Copyright (c) 2018年 shinren.pan@gmail.com All rights reserved.
+//
 
 #import "TVPlayerViewController.h"
 
@@ -70,7 +69,7 @@
         
         title = NSLocalizedString(@"OK", @"確定");
         
-        void (^callback)() = ^(){
+        void (^callback)(UIAlertAction *) = ^(UIAlertAction *action){
             [self.navigationController popViewControllerAnimated:YES];
         };
         
